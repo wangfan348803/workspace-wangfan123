@@ -1,0 +1,20 @@
+# OpenClaw sensitive or local files
+credentials/
+gateway.token
+logs/
+media/
+memory/
+workspace*/
+.vscode/
+openclaw.json.bak*
+skills-lock.json
+delivery-queue/
+cron/
+agents/
+telegram/
+devices/
+browser/
+canvas/
+completions/
+identity/
+*.jsonl*

@@ -1,0 +1,295 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.11",
+    "lastTouchedAt": "2026-03-13T09:55:12.286Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-12T03:05:55.176Z",
+    "lastRunVersion": "2026.3.8",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "auth": {
+    "profiles": {
+      "openai-codex:default": {
+        "provider": "openai-codex",
+        "mode": "oauth"
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "openai-codex/gpt-5.4",
+        "fallbacks": []
+      },
+      "models": {
+        "openai/gpt-5.4": {
+          "params": {
+            "serviceTier": "auto",
+            "openaiWsWarmup": true,
+            "responsesServerCompaction": true,
+            "responsesCompactThreshold": 120000
+          }
+        },
+        "openai/gpt-5.4-pro": {
+          "params": {
+            "serviceTier": "auto",
+            "openaiWsWarmup": true,
+            "responsesServerCompaction": true,
+            "responsesCompactThreshold": 120000
+          }
+        },
+        "openai-codex/gpt-5.4": {
+          "params": {
+            "transport": "auto"
+          }
+        }
+      },
+      "workspace": "C:\\Users\\15013\\.openclaw\\workspace",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 1,
+      "subagents": {
+        "maxConcurrent": 1
+      }
+    },
+    "list": [
+      {
+        "id": "main_backup",
+        "tools": {
+          "alsoAllow": [
+            "web_search",
+            "web_fetch",
+            "browser",
+            "canvas",
+            "message",
+            "gateway",
+            "nodes",
+            "agents_list",
+            "tts"
+          ]
+        }
+      },
+      {
+        "id": "wangfan123",
+        "name": "wangfan123",
+        "workspace": "C:\\Users\\15013\\.openclaw\\workspace-wangfan123",
+        "agentDir": "C:\\Users\\15013\\.openclaw\\agents\\wangfan123\\agent",
+        "tools": {
+          "profile": "messaging",
+          "alsoAllow": [
+            "browser",
+            "canvas",
+            "message",
+            "gateway",
+            "nodes",
+            "agents_list",
+            "tts",
+            "read",
+            "write",
+            "edit",
+            "apply_patch",
+            "exec",
+            "process",
+            "web_search",
+            "web_fetch",
+            "memory_search",
+            "memory_get",
+            "sessions_spawn",
+            "subagents",
+            "cron",
+            "image",
+            "sessions_list",
+            "sessions_history",
+            "sessions_send"
+          ]
+        }
+      },
+      {
+        "id": "wangfan",
+        "name": "wangfan",
+        "workspace": "C:\\Users\\15013\\.openclaw\\workspace",
+        "agentDir": "C:\\Users\\15013\\.openclaw\\agents\\wangfan\\agent",
+        "tools": {
+          "alsoAllow": [
+            "browser",
+            "canvas",
+            "message",
+            "gateway",
+            "nodes",
+            "agents_list",
+            "tts",
+            "read",
+            "write",
+            "edit",
+            "apply_patch",
+            "exec",
+            "process",
+            "web_search",
+            "web_fetch",
+            "memory_search",
+            "memory_get",
+            "sessions_spawn",
+            "subagents",
+            "cron",
+            "image"
+          ]
+        }
+      },
+      {
+        "id": "onlyyou123",
+        "name": "onlyyou123",
+        "workspace": "C:\\Users\\15013\\.openclaw\\workspace-onlyyou123",
+        "agentDir": "C:\\Users\\15013\\.openclaw\\agents\\onlyyou123\\agent",
+        "tools": {
+          "alsoAllow": [
+            "browser",
+            "canvas",
+            "message",
+            "gateway",
+            "nodes",
+            "agents_list",
+            "tts",
+            "read",
+            "write",
+            "edit",
+            "apply_patch",
+            "exec",
+            "process",
+            "web_search",
+            "web_fetch",
+            "memory_search",
+            "memory_get",
+            "sessions_spawn",
+            "subagents",
+            "cron",
+            "image"
+          ]
+        }
+      }
+    ]
+  },
+  "tools": {
+    "profile": "coding"
+  },
+  "bindings": [
+    {
+      "type": "route",
+      "agentId": "wangfan",
+      "match": {
+        "channel": "telegram",
+        "accountId": "wangfan"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "onlyyou123",
+      "match": {
+        "channel": "telegram",
+        "accountId": "onlyyou123"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "wangfan123",
+      "match": {
+        "channel": "telegram"
+      }
+    }
+  ],
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "botToken": "8347478363:AAG1xIcN0QKCt28MnlKNkbzWJDyAabzk6z8",
+      "groupPolicy": "allowlist",
+      "groupAllowFrom": [
+        "7128414677"
+      ],
+      "streaming": "partial",
+      "accounts": {
+        "default": {
+          "name": "wangfan123",
+          "dmPolicy": "pairing",
+          "botToken": "8347478363:AAG1xIcN0QKCt28MnlKNkbzWJDyAabzk6z8",
+          "groupPolicy": "allowlist",
+          "groupAllowFrom": [
+            "7128414677"
+          ],
+          "streaming": "partial"
+        },
+        "wangfan": {
+          "name": "wangfan",
+          "dmPolicy": "pairing",
+          "botToken": "8643133198:AAGSJ1z1AwUM7O-kuVadRQBCB_W0BWPM8dI",
+          "groupPolicy": "allowlist",
+          "groupAllowFrom": [
+            "7128414677"
+          ],
+          "streaming": "partial"
+        },
+        "onlyyou123": {
+          "name": "onlyyou123",
+          "dmPolicy": "pairing",
+          "botToken": "8714641231:AAEKFxX9nPInRXt4x25RBMuByaeVLQErSEw",
+          "groupPolicy": "allowlist",
+          "groupAllowFrom": [
+            "7128414677"
+          ],
+          "streaming": "partial"
+        }
+      },
+      "defaultAccount": "default",
+      "network": {
+        "autoSelectFamily": false
+      }
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "848ade301d7284717b5bc8621c0222f15267b811c596f368"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+  "skills": {
+    "entries": {
+      "gemini": {
+        "enabled": true
+      },
+      "xurl": {
+        "enabled": true
+      },
+      "gog": {
+        "enabled": true
+      },
+      "apple-notes": {
+        "enabled": true
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "google-gemini-cli-auth": {
+        "enabled": true
+      }
+    }
+  }
+}

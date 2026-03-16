@@ -1,0 +1,5 @@
+baoyu-danger-gemini-web -> C:\Users\15013\.openclaw\.agents\skills\baoyu-danger-gemini-web
+baoyu-image-gen -> C:\Users\15013\.openclaw\.agents\skills\baoyu-image-gen
+baoyu-post-to-wechat -> C:\Users\15013\.openclaw\.agents\skills\baoyu-post-to-wechat
+find-skills -> C:\Users\15013\.agents\skills\find-skills
+generate-wechat-ai-article -> C:\Users\15013\.openclaw\.agents\skills\generate-wechat-ai-article

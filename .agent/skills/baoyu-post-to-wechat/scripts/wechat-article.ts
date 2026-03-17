@@ -59,7 +59,8 @@ async function clickMenuByText(session: ChromeSession, text: string): Promise<vo
         const items = document.querySelectorAll('.new-creation__menu .new-creation__menu-item');
         for (const item of items) {
           const title = item.querySelector('.new-creation__menu-title');
-          if (title && title.textContent?.trim() === '${text}') {
+          const titleText = title?.textContent?.trim() || '';
+          if (titleText === '${text}' || titleText === '图文消息' || titleText === '图文' || titleText === '写新图文') {
             item.scrollIntoView({ block: 'center' });
             const rect = item.getBoundingClientRect();
             return JSON.stringify({ x: rect.x + rect.width / 2, y: rect.y + rect.height / 2 });
@@ -654,8 +655,38 @@ export async function postArticle(options: ArticleOptions): Promise<void> {
       }
     }
 
+    console.log('[wechat] Dispatching input event on editor to ensure content save...');
+    await evaluate(session, `
+      (function() {
+        const pm = document.querySelector('.ProseMirror');
+        if (pm) {
+          pm.dispatchEvent(new Event('input', { bubbles: true }));
+          pm.dispatchEvent(new Event('blur', { bubbles: true }));
+        }
+      })()
+    `);
+    await sleep(1000);
+
     console.log('[wechat] Saving as draft...');
-    await evaluate(session, `document.querySelector('#js_submit button').click()`);
+    const submitResult = await evaluate(session, `
+      (function() {
+        const allBtns = document.querySelectorAll('button');
+        for (const btn of allBtns) {
+          const text = btn.textContent?.trim();
+          if (text === '保存为草稿') {
+            btn.click();
+            return 'clicked:保存为草稿';
+          }
+        }
+        const oldBtn = document.querySelector('#js_submit button') || document.querySelector('#js_submit');
+        if (oldBtn) {
+          oldBtn.click();
+          return 'clicked:#js_submit';
+        }
+        return 'not_found';
+      })()
+    `);
+    console.log('[wechat] Submit result:', submitResult);
     await sleep(3000);
 
     const saved = await evaluate<boolean>(session, `!!document.querySelector('.weui-desktop-toast')`);

@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "id": "cover",
+      "prompt": "极具未来感和电影质感的封面艺术：展示一款先进的高性能AI芯片（代表Vera Rubin架构），在现代数据中心内散发出耀眼的蓝金光芒，8k分辨率，高清写实。",
+      "image": "imgs/cover.png",
+      "provider": "dashscope",
+      "model": "qwen-image-2.0-pro",
+      "size": "1280x720"
+    },
+    {
+      "id": "inference",
+      "prompt": "一张抽象的高科技视觉图，展现AI系统的重心转移：数据流从一个发光的神经网络核心飞速向外辐射，象征着超快的实时『推理』和物理世界的连接，充满能量感。",
+      "image": "imgs/img1.png",
+      "provider": "dashscope",
+      "model": "qwen-image-2.0-pro",
+      "size": "1280x720"
+    },
+    {
+      "id": "physical_ai",
+      "prompt": "动态科幻插画『物理AI』：流线型的自主机器人和智能车辆在充满赛博朋克光影和数字能量的未来城市中流畅运行，高度细节，生动的光影。",
+      "image": "imgs/img2.png",
+      "provider": "dashscope",
+      "model": "qwen-image-2.0-pro",
+      "size": "1280x720"
+    }
+  ]
+}

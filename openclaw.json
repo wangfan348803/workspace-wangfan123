@@ -1,12 +1,12 @@
 {
   "meta": {
-    "lastTouchedVersion": "2026.3.13",
-    "lastTouchedAt": "2026-03-23T08:54:47.237Z"
+    "lastTouchedVersion": "2026.3.23-2",
+    "lastTouchedAt": "2026-03-26T05:29:20.594Z"
   },
   "wizard": {
-    "lastRunAt": "2026-03-12T03:05:55.176Z",
-    "lastRunVersion": "2026.3.8",
-    "lastRunCommand": "onboard",
+    "lastRunAt": "2026-03-25T02:19:51.745Z",
+    "lastRunVersion": "2026.3.23-2",
+    "lastRunCommand": "doctor",
     "lastRunMode": "local"
   },
   "browser": {
@@ -29,7 +29,7 @@
       },
       "chrome-relay": {
         "cdpUrl": "http://127.0.0.1:18792",
-        "driver": "extension",
+        "driver": "existing-session",
         "color": "#008000"
       }
     }
@@ -93,7 +93,12 @@
             "gateway",
             "nodes",
             "agents_list",
-            "tts"
+            "tts",
+            "sessions_list",
+            "sessions_history",
+            "sessions_send",
+            "memory_search",
+            "memory_get"
           ]
         }
       },
@@ -197,7 +202,19 @@
     ]
   },
   "tools": {
-    "profile": "coding"
+    "profile": "coding",
+    "sessions": {
+      "visibility": "all"
+    },
+    "agentToAgent": {
+      "enabled": true,
+      "allow": [
+        "main_backup",
+        "onlyyou123",
+        "wangfan",
+        "wangfan123"
+      ]
+    }
   },
   "bindings": [
     {
@@ -289,6 +306,9 @@
         }
       },
       "defaultAccount": "default"
+    },
+    "openclaw-weixin": {
+      "accounts": {}
     }
   },
   "gateway": {
@@ -331,9 +351,6 @@
   },
   "plugins": {
     "entries": {
-      "google-gemini-cli-auth": {
-        "enabled": true
-      },
       "openclaw-weixin": {
         "enabled": true
       }
@@ -343,14 +360,14 @@
         "source": "npm",
         "spec": "@tencent-weixin/openclaw-weixin",
         "installPath": "C:\\Users\\15013\\.openclaw\\extensions\\openclaw-weixin",
-        "version": "1.0.2",
+        "version": "2.0.1",
         "resolvedName": "@tencent-weixin/openclaw-weixin",
-        "resolvedVersion": "1.0.2",
-        "resolvedSpec": "@tencent-weixin/openclaw-weixin@1.0.2",
-        "integrity": "sha512-kYPEowHB/0VWt9nQFee/AS6Fb+jbnu38wjkgZDBdKTuJoBL0IBW2obQ0ymgFKBFJJL9rDwnFrb/17ORGZD/X8Q==",
-        "shasum": "244baf0a873683a9c350d0f0b5bc055c07b0eb39",
-        "resolvedAt": "2026-03-22T08:02:16.805Z",
-        "installedAt": "2026-03-22T08:03:04.612Z"
+        "resolvedVersion": "2.0.1",
+        "resolvedSpec": "@tencent-weixin/openclaw-weixin@2.0.1",
+        "integrity": "sha512-Ib7onvLU8a1ox9craMZxPwrN+ffJQJbToZzeMwoYryBOMIoBlVY0oCuQF7BZvZ7GRQQKOSSAdxvFkO47hKu0rg==",
+        "shasum": "06339fdc83226454e1286221889fd62c76ae2463",
+        "resolvedAt": "2026-03-26T05:27:30.920Z",
+        "installedAt": "2026-03-26T05:28:20.870Z"
       }
     }
   }
